@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                         number = edtNumber.getText().toString();
                         arrContacts.add(new ContactModel(name,number));
                         recyclerView.scrollToPosition(arrContacts.size()-1);
-                        dialog.dismiss();
+
 
                     }
                 });
