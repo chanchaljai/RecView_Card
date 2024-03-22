@@ -48,13 +48,19 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String name="",number="";
-                        name = edtName.getText().toString();
-                        number = edtNumber.getText().toString();
+                        if(!edtName.getText().toString().equals("")){
+                            name = edtName.getText().toString();
+                        }else{
+                            Toast.makeText(MainActivity.this, "Please Enter Contact Name!", Toast.LENGTH_SHORT).show();
+                        }
+                        if(!edtNumber.getText().toString().equals("")){
+                            number= edtNumber.getText().toString();
+                        }else{
+                            Toast.makeText(MainActivity.this, "Please Enter Contact Number!", Toast.LENGTH_SHORT).show();
+                        }
                         arrContacts.add(new ContactModel(name,number));
                         recyclerView.scrollToPosition(arrContacts.size()-1);
                         dialog.dismiss();
-
-
                     }
                 });
                 dialog.show();
